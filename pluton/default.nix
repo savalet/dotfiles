@@ -142,45 +142,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    zsh
-    zsh-powerlevel10k
     git
-    lazygit
-    vim
-    wget
-    neovim
-    libgcc
-    ripgrep
-    btop
-    htop
-    vscode
-    spotify
-    discord
-    nextcloud-client
-    kitty
-    teams-for-linux
-    i3lock-color
-    imagemagick
-    xorg.xdpyinfo
-    direnv
-    termius
-    xfce.thunar
-    hyprpaper
-    waybar
-    dunst
-    playerctl
-    wttrbar
-    python3
-    python311Packages.pip
-    xdg-desktop-portal-hyprland
-    sway-contrib.grimshot
-    brightnessctl
-    wireguard-tools
-    wofi
-    bat
-    wlogout
-    wl-clipboard
-    wl-clip-persist
     home-manager
   ];
 
