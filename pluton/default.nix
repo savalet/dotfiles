@@ -181,6 +181,7 @@
     wlogout
     wl-clipboard
     wl-clip-persist
+    home-manager
   ];
 
   fonts.packages = with pkgs; [
