@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 {
+  imports = [
+    ./hyprland
+  ];
+
   nixpkgs.config.allowUnfree = true;
+
   home = {
     username = "savalet";
     homeDirectory = "/home/savalet";
