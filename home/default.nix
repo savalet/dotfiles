@@ -45,6 +45,8 @@
       wlogout
       wl-clipboard
       wl-clip-persist
+      gnupg
+      pinentry
     ];
   };
 

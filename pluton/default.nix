@@ -6,6 +6,13 @@
       ./hardware-configuration.nix
     ];
 
+  services.pcscd.enable = true;
+  programs.gnupg.agent = {
+     enable = true;
+     pinentryFlavor = "curses";
+     enableSSHSupport = true;
+  };
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
