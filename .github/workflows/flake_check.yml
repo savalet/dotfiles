@@ -1,3 +1,5 @@
+name: Nix flake checker
+
 on:
   workflow_dispatch:
   push:
@@ -30,5 +32,5 @@ jobs:
       - name: Run the Magic Nix Cache
         uses: DeterminateSystems/magic-nix-cache-action@v2
 
-      - name: Run coding style checker
-        run: nix flacke check --show-trace
+      - name: Run flake checker
+        run: nix flake check --show-trace
