@@ -2,6 +2,8 @@
 {
   imports = [
     ./hyprland
+    ./dunst
+    ./nvim
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -18,7 +20,6 @@
       lazygit
       vim
       wget
-      neovim
       ripgrep
       btop
       htop
@@ -32,7 +33,6 @@
       xfce.thunar
       hyprpaper
       waybar
-      dunst
       playerctl
       python3
       python311Packages.pip
