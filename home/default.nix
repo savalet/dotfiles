@@ -47,6 +47,7 @@
       wl-clip-persist
       gnupg
       pinentry
+      teams-for-linux
     ];
   };
 
