@@ -2,7 +2,7 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [.
       ./hardware-configuration.nix
     ];
 
@@ -14,13 +14,10 @@
   };
 
   # Bootloader.
-  # boot.loader.systemd-boot.enable = true;
-  # boot.loader.efi.canTouchEfiVariables = true;
-
   boot.loader = {
     efi = {
       canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot/EFI"; # ← use the same mount point here.
+      efiSysMountPoint = "/boot/EFI";
     };
     grub = {
       efiSupport = true;
