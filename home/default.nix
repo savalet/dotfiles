@@ -48,6 +48,7 @@
       gnupg
       pinentry
       teams-for-linux
+      google-chrome
     ];
   };
 
