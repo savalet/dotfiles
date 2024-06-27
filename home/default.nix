@@ -50,6 +50,7 @@
       teams-for-linux
       google-chrome
       prismlauncher
+      screen
     ];
   };
 

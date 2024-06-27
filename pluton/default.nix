@@ -9,7 +9,6 @@
   services.pcscd.enable = true;
   programs.gnupg.agent = {
      enable = true;
-     pinentryFlavor = "curses";
      enableSSHSupport = true;
   };
 
@@ -67,8 +66,8 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "us";
-    xkbVariant = "alt-intl";
+    xkb.layout = "us";
+    xkb.variant = "alt-intl";
   };
 
   # Configure console keymap
