@@ -51,6 +51,7 @@
       google-chrome
       prismlauncher
       screen
+      winbox
     ];
   };
 
