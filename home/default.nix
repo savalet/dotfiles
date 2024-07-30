@@ -52,6 +52,7 @@
       prismlauncher
       screen
       winbox
+      kubectl
     ];
   };
 
