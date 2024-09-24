@@ -1,10 +1,9 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
-  home.packages = with pkgs; [ neovim ];
-
-  home.file.nvim= {
-    source = ./src;
-    target = ".config/nvim";
-    recursive = true;
-  };
+  home.packages = with pkgs; [
+      inputs.Neve.packages.${system}.default
+      stylua
+      sumneko-lua-language-server
+      ripgrep
+  ];
 }

@@ -53,6 +53,8 @@
       screen
       winbox
       kubectl
+      yazi
+      vscode
     ];
   };
 
