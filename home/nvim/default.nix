@@ -25,7 +25,7 @@
     plugins = [ pkgs.vimPlugins.lazy-nvim ];
 
     extraPackages = with pkgs; let
-      ecsls-pkg = ecsls.packages.${pkgs.system}.default;
+      ecsls-pkg = inputs.ecsls.packages.${pkgs.system}.default;
     in
     [
       nil
