@@ -1,9 +1,8 @@
 { pkgs, ... }:
 {
-  home.packages = with pkgs; [ dunst ];
+  services.dunst = {
+    enable = true;
 
-  home.file.dunst= {
-    source = ./dunstrc;
-    target = ".config/dunst/dunstrc";
+    settings = (import ./settings.nix { inherit pkgs; });
   };
 }
