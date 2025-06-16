@@ -1,11 +1,11 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true;
-
+    initContent = lib.mkOrder 1500 "[[ \"$(tty)\" == /dev/tty1 ]] && Hyprland";
     plugins = [
       {
         name = "zsh-syntax-highlighting";
@@ -40,6 +40,7 @@
       ll = "ls -l";
       dodo = "shutdown now";
       lz = "lazygit";
+      neofetch = "fastfetch";
       ufda = "echo 'use flake' | tee .envrc && direnv allow";
     };
 
@@ -51,7 +52,6 @@
 
       plugins = [
         "git"
-        "ssh-agent"
       ];
     };
   };

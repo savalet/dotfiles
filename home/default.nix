@@ -13,19 +13,11 @@
 
     ./bash
     ./btop
-    ./neofetch
-    ./picom
     ./dunst
-    ./qtile
     ./hyprland
     ./xkb
-    ./tmux
     ./zsh
 
-    ./betterlockscreen
-    ./cursor.nix
-    ./extra_files.nix
-    ./flameshot.nix
     ./git.nix
     ./gtk.nix
     ./kitty.nix
@@ -65,7 +57,7 @@
       pavucontrol
     ] else [ ]) ++ [
       gimp
-      neofetch
+      fastfetch
       pass
 
       # utils

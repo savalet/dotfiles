@@ -113,24 +113,6 @@
       alsa.support32Bit = true;
       pulse.enable = true;
     };
-
-    xserver = {
-      enable = true;
-      displayManager.startx.enable = true;
-      xkb = {
-        layout = "custom";
-        extraLayouts.custom = {
-          description = "oui oui baguette";
-          languages = [ "eng" ];
-          symbolsFile =
-            let
-              ouioui = (pkgs.callPackage ./qwerty-fr.nix { });
-            in
-            "${ouioui}/share/X11/xkb/symbols/us_qwerty-fr";
-        };
-      };
-      windowManager.qtile.enable = true;
-    };
   };
 
   users.users.${username} = {
@@ -181,8 +163,6 @@
 
       man-pages
       man-pages-posix
-
-      picom-pijulius
     ];
   };
 
@@ -197,5 +177,4 @@
   };
 
   zramSwap.enable = true;
-  security.pam.services.i3lock.enable = true;
 }
