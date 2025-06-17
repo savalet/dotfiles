@@ -69,6 +69,7 @@
 
       wofi
       hyprpaper
+      waybar
       sway-contrib.grimshot
 
       scom
