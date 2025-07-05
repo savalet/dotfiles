@@ -42,6 +42,7 @@
       google-chrome
       firefox-devedition
       termius
+      telegram-desktop
 
       # dev
       nix-output-monitor
@@ -49,6 +50,8 @@
       lazygit
       tokei
       wakatime
+      arduino-ide
+      android-studio
 
       # misc
     ] ++ (if osConfig.services.pipewire.enable then [
@@ -69,12 +72,15 @@
 
       wofi
       hyprpaper
+      hyprlock
       waybar
       sway-contrib.grimshot
 
       scom
       prismlauncher
       winbox4
+      python3
+      networkmanagerapplet
     ];
   };
 
