@@ -3,8 +3,11 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-
 {
+  imports = [
+    ../dev/flutter.nix
+  ];
+
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -50,7 +53,7 @@
   };
 
   # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   boot.loader.grub.useOSProber = true;
 
@@ -79,6 +82,33 @@
   services.xserver.dpi = 115;
   services.netbird.enable = true;
   nixpkgs.config.allowUnfree = true;
+
+  services.displayManager.autoLogin = {
+    user = "savalet";
+  };
+
+  nix.buildMachines = [{
+    hostName = "savalet@10.0.0.196";
+    sshKey = "/home/savalet/.ssh/id25519_ssh";
+    system = "x86_64-linux";
+    protocol = "ssh";
+    maxJobs = 24;
+    speedFactor = 2;
+    supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
+    mandatoryFeatures = [ ];
+  }];
+  nix.distributedBuilds = true;
+  # optional, useful when the builder has a faster internet connection than yours
+  nix.extraOptions = ''
+    builders-use-substitutes = true
+  '';
+
+  programs.flutter = {
+    enable = true;
+    user = "savalet"; # Replace with your actual username
+    enableAdb = true; # Enable ADB for Android debugging
+    addToKvmGroup = true; # Add to KVM group for hardware acceleration
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
