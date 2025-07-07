@@ -89,12 +89,12 @@
 
   nix.buildMachines = [{
     hostName = "savalet@10.0.0.196";
-    sshKey = "/home/savalet/.ssh/id25519_ssh";
+    sshKey = "/home/savalet/.ssh/id_ed25519_ssh";
     system = "x86_64-linux";
     protocol = "ssh";
     maxJobs = 24;
     speedFactor = 2;
-    supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
+    supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" ];
     mandatoryFeatures = [ ];
   }];
   nix.distributedBuilds = true;
