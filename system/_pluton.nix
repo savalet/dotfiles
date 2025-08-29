@@ -87,28 +87,17 @@
     user = "savalet";
   };
 
-  nix.buildMachines = [{
-    hostName = "savalet@10.0.0.196";
-    sshKey = "/home/savalet/.ssh/id_ed25519_ssh";
-    system = "x86_64-linux";
-    protocol = "ssh";
-    maxJobs = 24;
-    speedFactor = 2;
-    supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" ];
-    mandatoryFeatures = [ ];
-  }];
-  nix.distributedBuilds = true;
-  # optional, useful when the builder has a faster internet connection than yours
-  nix.extraOptions = ''
-    builders-use-substitutes = true
-  '';
-
   programs.flutter = {
     enable = true;
     user = "savalet"; # Replace with your actual username
     enableAdb = true; # Enable ADB for Android debugging
     addToKvmGroup = true; # Add to KVM group for hardware acceleration
   };
+
+  virtualisation.docker = {
+    enable = true;
+  };
+  users.users.savalet.extraGroups = [ "docker" ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
