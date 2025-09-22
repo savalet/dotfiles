@@ -81,6 +81,11 @@
       winbox4
       python3
       networkmanagerapplet
+
+      vlc
+      obs-studio
+      vscode
+      jetbrains-toolbox
     ];
   };
 
