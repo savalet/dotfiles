@@ -41,7 +41,7 @@
       discord
       google-chrome
       firefox-devedition
-      termius
+      #termius
       telegram-desktop
 
       # dev
