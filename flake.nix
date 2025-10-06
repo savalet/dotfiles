@@ -6,7 +6,7 @@
     flake-utils.url = "github:numtide/flake-utils";
 
     vera-clang = {
-      url = "github:Sigmapitech/vera-clang";
+      url = "github:savalet/vera-clang";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-utils.follows = "flake-utils";
@@ -110,12 +110,14 @@
       let
         nhw-mod = nixos-hardware.nixosModules;
 
-        mk-base-paths = hostname: let
-          key = pkgs.lib.toLower hostname;
-        in [
-           ./system/_${key}.nix
-           ./hardware/${key}.hardware-configuration.nix
-        ];
+        mk-base-paths = hostname:
+          let
+            key = pkgs.lib.toLower hostname;
+          in
+          [
+            ./system/_${key}.nix
+            ./hardware/${key}.hardware-configuration.nix
+          ];
 
 
         mk-system = hostname: specific-modules:
