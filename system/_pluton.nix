@@ -4,10 +4,6 @@
 
 { config, pkgs, ... }:
 {
-  imports = [
-    ../dev/flutter.nix
-  ];
-
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -29,32 +25,6 @@
     LC_TIME = "fr_FR.UTF-8";
   };
 
-  hardware = {
-    nvidia = {
-      modesetting.enable = true;
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
-
-      powerManagement.enable = true;
-      powerManagement.finegrained = true;
-
-      open = false;
-      nvidiaSettings = true;
-      prime = {
-        offload.enable = true;
-        offload.enableOffloadCmd = true;
-        intelBusId = "PCI:0:02:0";
-        nvidiaBusId = "PCI:1:0:0";
-      };
-    };
-
-    graphics = {
-      enable = true;
-    };
-  };
-
-  # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = [ "nvidia" ];
-
   boot.loader.grub.useOSProber = true;
 
   # Enable sound with pipewire.
@@ -66,12 +36,6 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-  #services = {
-  #  asusd = {
-  #    enable = true;
-  #    enableUserService = true;
-  #  };
-  #};
 
   programs.hyprland = {
     enable = true;
@@ -87,16 +51,10 @@
     user = "savalet";
   };
 
-  programs.flutter = {
-    enable = true;
-    user = "savalet"; # Replace with your actual username
-    enableAdb = true; # Enable ADB for Android debugging
-    addToKvmGroup = true; # Add to KVM group for hardware acceleration
-  };
-
   virtualisation.docker = {
     enable = true;
   };
+
   users.users.savalet.extraGroups = [ "docker" ];
 
   # This value determines the NixOS release from which the default
@@ -106,5 +64,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
-
 }
