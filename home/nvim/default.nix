@@ -1,4 +1,4 @@
-{ pkgs, ecsls, system, ... }:
+{ pkgs, system, ... }:
 {
   home.file = {
     nvim_conf = {
@@ -24,10 +24,7 @@
     extraConfig = (builtins.readFile ./.vimrc);
     plugins = [ pkgs.vimPlugins.lazy-nvim ];
 
-    extraPackages = with pkgs; let
-      ecsls-pkg = ecsls.packages.${system}.default;
-    in
-    [
+    extraPackages = with pkgs; [
       nil
       lua-language-server
       pyright
@@ -35,7 +32,6 @@
       llvmPackages_latest.clang
       nodejs
       xclip
-      ecsls-pkg
     ];
   };
 }

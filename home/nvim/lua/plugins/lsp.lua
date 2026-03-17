@@ -44,21 +44,6 @@ lspconfig.clangd.setup({
 })
 lspconfig.pyright.setup({})
 
--- ↓ Epitech CS
-local configs = require("lspconfig.configs")
-
-if not configs.ecsls then
-  configs.ecsls = {
-    default_config = {
-      root_dir = lspconfig.util.root_pattern(".git", "Makefile"),
-      cmd = { "ecsls_run" },
-      autostart = true,
-      name = "ecsls",
-      filetypes = { "c", "cpp", "make" },
-    },
-  }
-end
-lspconfig.ecsls.setup({})
 -- ↓ Epitech HCS
 if not configs.ehcsls then
   configs.ehcsls = {
