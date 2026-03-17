@@ -49,7 +49,7 @@
       gnumake
       lazygit
       tokei
-      wakatime
+      wakatime-cli
       arduino-ide
       android-studio
 
