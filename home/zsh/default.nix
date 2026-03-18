@@ -5,7 +5,7 @@
     autosuggestion.enable = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true;
-    initContent = lib.mkOrder 1500 "[[ \"$(tty)\" == /dev/tty1 ]] && Hyprland";
+    initContent = lib.mkOrder 1500 "[[ \"$(tty)\" == /dev/tty1 ]] && start-hyprland";
     plugins = [
       {
         name = "zsh-syntax-highlighting";
